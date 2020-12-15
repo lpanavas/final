@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
 import "./homePage.css";
-import { Icon } from "semantic-ui-react";
+import { SearchOutlined } from "@ant-design/icons";
 import NavBar from "../../components/navBar";
 import { Layout } from "antd";
 
@@ -175,7 +175,6 @@ const HomePage = (props) => {
                             size="sm"
                             custom
                             onChange={(evt) => setMaxPrice(evt.target.value)}
-                            defaultValue="---"
                           >
                             <option>$1000</option>
                             <option>$1500</option>
@@ -196,7 +195,16 @@ const HomePage = (props) => {
                     </Form.Row>
                     <Row>
                       <Col xs={{ offset: 0.1 }}>
-                        <Button variant="primary" onClick={handleSearch}>
+                        <Button
+                          variant="primary"
+                          onClick={handleSearch}
+                          style={{
+                            fontFamily:
+                              "Brush Script MT, Brush Script Std, cursive",
+                            fontSize: "25px",
+                          }}
+                        >
+                          <SearchOutlined />
                           Search
                         </Button>
                       </Col>

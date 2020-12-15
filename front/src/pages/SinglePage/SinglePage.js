@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import { Container, Row, Col, Alert } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 import { Carousel } from "react-responsive-carousel";
 import { getImageUrl, imageSize } from "../imageProcessing";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./singlePage.css";
+import { UserAddOutlined, HighlightOutlined } from "@ant-design/icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Layout } from "antd";
 import NavBar from "../../components/navBar";
@@ -14,7 +15,6 @@ const { Header, Content } = Layout;
 const SinglePage = (props) => {
   const { houseId } = useParams();
   const [house, setHouse] = useState(null);
-  const location = useLocation();
 
   const [anno, setAnno] = useState([]);
 
@@ -64,6 +64,7 @@ const SinglePage = (props) => {
                       <img
                         key={idx.toString()}
                         src={getImageUrl(img, imageSize.MEDIUM)}
+                        alt=""
                       />
                     ))}
                   </Carousel>
@@ -97,7 +98,7 @@ const SinglePage = (props) => {
                         </div>
 
                         <button type="submit" className="btn btn-dark">
-                          Submit
+                          <HighlightOutlined /> Write
                         </button>
                         <div className="comments">
                           {anno.map((singleanno, idx) => (
@@ -113,24 +114,31 @@ const SinglePage = (props) => {
                   </Row>
 
                   <Row>
-                    {" "}
-                    <form action="/users/updateFollowing" method="post">
-                      <input
-                        type="hidden"
-                        name="username"
-                        id={props.user}
-                        value={props.user}
-                      />
-                      <input
-                        type="hidden"
-                        name="following"
-                        id={house["author"]}
-                        value={house["author"]}
-                      />
-                      <button type="submit" className="btn btn-dark">
-                        Follow the author {house["author"]}
-                      </button>
-                    </form>
+                    <Col xs={12}>
+                      {" "}
+                      <form action="/users/updateFollowing" method="post">
+                        <input
+                          type="hidden"
+                          name="username"
+                          id={props.user}
+                          value={props.user}
+                        />
+                        <input
+                          type="hidden"
+                          name="following"
+                          id={house["author"]}
+                          value={house["author"]}
+                        />
+                        <button
+                          type="submit"
+                          className="btn btn-dark"
+                          style={{}}
+                        >
+                          <UserAddOutlined /> Follow the author{" "}
+                          {house["author"]}
+                        </button>
+                      </form>
+                    </Col>
                   </Row>
 
                   <div className="postingbody">{house["body"]}</div>
