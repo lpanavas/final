@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useContext } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import { Container, Row, Col, Alert, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Layout } from "antd";
 import NavBar from "../../components/navBar";

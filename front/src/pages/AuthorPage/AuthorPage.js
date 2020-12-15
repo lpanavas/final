@@ -1,12 +1,8 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../../components/navBar";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import { Container, Row, Col, Alert } from "react-bootstrap";
-
-import { Carousel } from "react-responsive-carousel";
-
-import { getImageUrl, imageSize } from "../imageProcessing";
+import { Container, Row } from "react-bootstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Layout } from "antd";

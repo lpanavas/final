@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Container, Form, Row, Col, Button } from "react-bootstrap";
+import { Container, Form, Row, Col } from "react-bootstrap";
+import "antd/dist/antd.css";
+import { Button, Tooltip } from "antd";
 import "./homePage.css";
 import { SearchOutlined } from "@ant-design/icons";
 import NavBar from "../../components/navBar";
@@ -85,26 +87,30 @@ const HomePage = (props) => {
                   className="search-form-container p-2 search-form-container"
                 >
                   <Form>
-                    <Form.Group controlId="room">
-                      <label
-                        for="inputAddress"
-                        style={{
-                          fontFamily:
-                            "Brush Script MT, Brush Script Std, cursive",
-                          fontSize: "30px",
-                        }}
-                      >
-                        Neighborhood
-                        <Form.Control
-                          type="neighbor"
-                          placeholder="San Francisco"
-                          onChange={(evt) => setNeighbor(evt.target.value)}
-                        />
-                      </label>
-                    </Form.Group>
                     <Form.Row>
-                      <Col>
-                        <Form.Group controlId="neighbor">
+                      <Col xs={{ span: 12 }}>
+                        <Form.Group controlId="address">
+                          <label
+                            for="inputAddress"
+                            style={{
+                              fontFamily:
+                                "Brush Script MT, Brush Script Std, cursive",
+                              fontSize: "30px",
+                            }}
+                          >
+                            Neighborhood
+                            <Form.Control
+                              type="neighbor"
+                              placeholder="San Francisco"
+                              onChange={(evt) => setNeighbor(evt.target.value)}
+                            />
+                          </label>
+                        </Form.Group>
+                      </Col>
+                    </Form.Row>
+                    <Form.Row>
+                      <Col xs={{ span: 6 }}>
+                        <Form.Group controlId="room">
                           <Form.Label
                             style={{
                               fontFamily:
@@ -128,6 +134,8 @@ const HomePage = (props) => {
                           </Form.Control>
                         </Form.Group>
                       </Col>
+                    </Form.Row>
+                    <Form.Row>
                       <Col>
                         <Form.Group controlId="price-from-group">
                           <Form.Label
@@ -137,7 +145,7 @@ const HomePage = (props) => {
                               fontSize: "30px",
                             }}
                           >
-                            By price from:
+                            From :
                           </Form.Label>
                           <Form.Control
                             as="select"
@@ -168,7 +176,7 @@ const HomePage = (props) => {
                               fontSize: "30px",
                             }}
                           >
-                            By price to:
+                            To :
                           </Form.Label>
                           <Form.Control
                             as="select"
@@ -194,19 +202,14 @@ const HomePage = (props) => {
                       </Col>
                     </Form.Row>
                     <Row>
-                      <Col xs={{ offset: 0.1 }}>
-                        <Button
-                          variant="primary"
-                          onClick={handleSearch}
-                          style={{
-                            fontFamily:
-                              "Brush Script MT, Brush Script Std, cursive",
-                            fontSize: "25px",
-                          }}
-                        >
-                          <SearchOutlined />
-                          Search
-                        </Button>
+                      <Col xs={{ offset: 10 }}>
+                        <Tooltip title="search">
+                          <Button
+                            shape="circle"
+                            icon={<SearchOutlined />}
+                            onClick={handleSearch}
+                          />
+                        </Tooltip>
                       </Col>
                     </Row>
                   </Form>
