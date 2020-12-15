@@ -12,7 +12,7 @@ require("dotenv").config();
 require("dotenv/config");
 const ObjectId = require("mongodb").ObjectID;
 
-const url = "mongodb://localhost:27017";
+const url = process.env.MONGODB_URI;
 let db;
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });

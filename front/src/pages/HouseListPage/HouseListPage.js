@@ -1,8 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Pagination } from "react-bootstrap";
-import { Row } from "antd";
+import { Row, Pagination } from "antd";
 import PostCard from "../../components/PostCard/PostCard";
 import "./houseListPage.css";
 import { getImageUrl, imageSize } from "../imageProcessing";

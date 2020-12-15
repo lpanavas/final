@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 
 const router = express.Router();
 
-const url = "mongodb://localhost:27017";
+const url = process.env.MONGODB_URI;
 let db;
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
