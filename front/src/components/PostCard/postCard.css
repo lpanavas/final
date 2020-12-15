@@ -1,0 +1,16 @@
+.ant-card-cover img {
+  /*  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;*/
+
+  height: 200px;
+
+  width: 295px;
+  object-fit: cover;
+}
+
+.ant-card {
+  width: 80%;
+  margin-left: 30px;
+}

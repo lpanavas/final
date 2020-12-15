@@ -1,0 +1,23 @@
+.post-title {
+    font-family: "Bitstream Vera Serif", "Times New Roman", serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 1.4em;
+    margin: 10px 0;
+    clear: left;
+}
+
+.postingbody {
+    font-family: "Bitstream Vera Serif", "Times New Roman", serif;
+    clear: left;
+    margin: 0 0 1em;
+    position: relative;
+}
+
+.comments {
+    font-family: "Bitstream Vera Serif", "Times New Roman", serif;
+    clear: left;
+    font-weight: bold;
+    margin: 0 0 1em;
+    position: relative;
+}
